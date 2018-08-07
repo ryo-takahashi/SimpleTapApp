@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FE617FFF77511D522280675 /* Pods_SimpleTapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B580F392A0CCCABA06234F74 /* Pods_SimpleTapApp.framework */; };
 		5A3C49042119C9F900B9BC6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C49032119C9F900B9BC6F /* AppDelegate.swift */; };
 		5A3C49062119C9F900B9BC6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C49052119C9F900B9BC6F /* ViewController.swift */; };
 		5A3C49092119C9F900B9BC6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A3C49072119C9F900B9BC6F /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		326155289FC23193078BE042 /* Pods-SimpleTapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTapApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleTapApp/Pods-SimpleTapApp.release.xcconfig"; sourceTree = "<group>"; };
 		5A3C49002119C9F900B9BC6F /* SimpleTapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3C49032119C9F900B9BC6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5A3C49052119C9F900B9BC6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +24,8 @@
 		5A3C490A2119C9FA00B9BC6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A3C490D2119C9FA00B9BC6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A3C490F2119C9FA00B9BC6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B580F392A0CCCABA06234F74 /* Pods_SimpleTapApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleTapApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED853E18D49271B9ABE151C8 /* Pods-SimpleTapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTapApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleTapApp/Pods-SimpleTapApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FE617FFF77511D522280675 /* Pods_SimpleTapApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +45,8 @@
 			children = (
 				5A3C49022119C9F900B9BC6F /* SimpleTapApp */,
 				5A3C49012119C9F900B9BC6F /* Products */,
+				B217599A700FB144A559003A /* Pods */,
+				8F9267A551BD56A6611DCAC9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +71,23 @@
 			path = SimpleTapApp;
 			sourceTree = "<group>";
 		};
+		8F9267A551BD56A6611DCAC9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B580F392A0CCCABA06234F74 /* Pods_SimpleTapApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B217599A700FB144A559003A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ED853E18D49271B9ABE151C8 /* Pods-SimpleTapApp.debug.xcconfig */,
+				326155289FC23193078BE042 /* Pods-SimpleTapApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5A3C49122119C9FA00B9BC6F /* Build configuration list for PBXNativeTarget "SimpleTapApp" */;
 			buildPhases = (
+				A8A7958BAD91FCF0B9E8E70A /* [CP] Check Pods Manifest.lock */,
 				5A3C48FC2119C9F900B9BC6F /* Sources */,
 				5A3C48FD2119C9F900B9BC6F /* Frameworks */,
 				5A3C48FE2119C9F900B9BC6F /* Resources */,
+				BFBD5F3F7F7D1C603E978B96 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A8A7958BAD91FCF0B9E8E70A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleTapApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFBD5F3F7F7D1C603E978B96 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleTapApp/Pods-SimpleTapApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SimpleTapApp/Pods-SimpleTapApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5A3C48FC2119C9F900B9BC6F /* Sources */ = {
@@ -278,15 +343,13 @@
 		};
 		5A3C49132119C9FA00B9BC6F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ED853E18D49271B9ABE151C8 /* Pods-SimpleTapApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9PHSZKL64F;
 				INFOPLIST_FILE = SimpleTapApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.k0uhashi.SimpleTapApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -296,15 +359,13 @@
 		};
 		5A3C49142119C9FA00B9BC6F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 326155289FC23193078BE042 /* Pods-SimpleTapApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9PHSZKL64F;
 				INFOPLIST_FILE = SimpleTapApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.k0uhashi.SimpleTapApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
