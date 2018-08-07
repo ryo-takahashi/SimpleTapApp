@@ -1,24 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YYm-xh-a6s">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Rx View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="RxViewController" customModule="SimpleTapApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ボタンを押して！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="edu-5e-7tc">
+                                <rect key="frame" x="0.0" y="243" width="375" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Irv-xy-thr">
+                                <rect key="frame" x="138" y="313" width="98" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="タップ！"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Irv-xy-thr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aDf-in-96D"/>
+                            <constraint firstItem="edu-5e-7tc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="chV-xi-7KS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="edu-5e-7tc" secondAttribute="trailing" id="l8Y-up-sBB"/>
+                            <constraint firstItem="Irv-xy-thr" firstAttribute="top" secondItem="edu-5e-7tc" secondAttribute="bottom" constant="40" id="riq-1P-g5r"/>
+                            <constraint firstItem="Irv-xy-thr" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="u5l-Ps-zSK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="countButton" destination="Irv-xy-thr" id="zao-rp-90e"/>
+                        <outlet property="countLabel" destination="edu-5e-7tc" id="2Mt-LI-5yP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1135" y="19"/>
+        </scene>
+        <!--Call Back View Controller-->
+        <scene sceneID="slx-Ae-JS0">
+            <objects>
+                <viewController id="YYm-xh-a6s" customClass="CallBackViewController" customModule="SimpleTapApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UPP-by-DDb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ボタンを押して！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZk-gu-W1N">
+                                <rect key="frame" x="0.0" y="243" width="375" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hg0-Fe-emf">
+                                <rect key="frame" x="138" y="313" width="98" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="タップ！"/>
+                                <connections>
+                                    <action selector="countUp:" destination="YYm-xh-a6s" eventType="touchUpInside" id="tU7-u3-94w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Hg0-Fe-emf" firstAttribute="top" secondItem="RZk-gu-W1N" secondAttribute="bottom" constant="40" id="2hE-ek-mjU"/>
+                            <constraint firstItem="Hg0-Fe-emf" firstAttribute="centerY" secondItem="UPP-by-DDb" secondAttribute="centerY" id="ONm-ds-uGl"/>
+                            <constraint firstItem="cZV-ya-wn0" firstAttribute="trailing" secondItem="RZk-gu-W1N" secondAttribute="trailing" id="UNc-Wp-MIP"/>
+                            <constraint firstItem="RZk-gu-W1N" firstAttribute="leading" secondItem="cZV-ya-wn0" secondAttribute="leading" id="uLM-r1-sgt"/>
+                            <constraint firstItem="Hg0-Fe-emf" firstAttribute="centerX" secondItem="UPP-by-DDb" secondAttribute="centerX" id="zpl-kz-P5o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cZV-ya-wn0"/>
+                    </view>
+                    <connections>
+                        <outlet property="countButton" destination="Hg0-Fe-emf" id="ch4-4G-VLx"/>
+                        <outlet property="countLabel" destination="RZk-gu-W1N" id="4PP-nM-amd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TXK-1m-7zp" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="409" y="20"/>
         </scene>
     </scenes>
 </document>

@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		2FE617FFF77511D522280675 /* Pods_SimpleTapApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B580F392A0CCCABA06234F74 /* Pods_SimpleTapApp.framework */; };
 		5A3C49042119C9F900B9BC6F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C49032119C9F900B9BC6F /* AppDelegate.swift */; };
-		5A3C49062119C9F900B9BC6F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C49052119C9F900B9BC6F /* ViewController.swift */; };
+		5A3C49062119C9F900B9BC6F /* CallBackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C49052119C9F900B9BC6F /* CallBackViewController.swift */; };
 		5A3C49092119C9F900B9BC6F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A3C49072119C9F900B9BC6F /* Main.storyboard */; };
 		5A3C490B2119C9FA00B9BC6F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A3C490A2119C9FA00B9BC6F /* Assets.xcassets */; };
 		5A3C490E2119C9FA00B9BC6F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A3C490C2119C9FA00B9BC6F /* LaunchScreen.storyboard */; };
+		5A3C49162119E66400B9BC6F /* RxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A3C49152119E66400B9BC6F /* RxViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		326155289FC23193078BE042 /* Pods-SimpleTapApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTapApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleTapApp/Pods-SimpleTapApp.release.xcconfig"; sourceTree = "<group>"; };
 		5A3C49002119C9F900B9BC6F /* SimpleTapApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleTapApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A3C49032119C9F900B9BC6F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5A3C49052119C9F900B9BC6F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5A3C49052119C9F900B9BC6F /* CallBackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallBackViewController.swift; sourceTree = "<group>"; };
 		5A3C49082119C9F900B9BC6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5A3C490A2119C9FA00B9BC6F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5A3C490D2119C9FA00B9BC6F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A3C490F2119C9FA00B9BC6F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5A3C49152119E66400B9BC6F /* RxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxViewController.swift; sourceTree = "<group>"; };
 		B580F392A0CCCABA06234F74 /* Pods_SimpleTapApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleTapApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED853E18D49271B9ABE151C8 /* Pods-SimpleTapApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleTapApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleTapApp/Pods-SimpleTapApp.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,7 +64,8 @@
 			isa = PBXGroup;
 			children = (
 				5A3C49032119C9F900B9BC6F /* AppDelegate.swift */,
-				5A3C49052119C9F900B9BC6F /* ViewController.swift */,
+				5A3C49052119C9F900B9BC6F /* CallBackViewController.swift */,
+				5A3C49152119E66400B9BC6F /* RxViewController.swift */,
 				5A3C49072119C9F900B9BC6F /* Main.storyboard */,
 				5A3C490A2119C9FA00B9BC6F /* Assets.xcassets */,
 				5A3C490C2119C9FA00B9BC6F /* LaunchScreen.storyboard */,
@@ -182,10 +185,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-SimpleTapApp/Pods-SimpleTapApp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,8 +205,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5A3C49062119C9F900B9BC6F /* ViewController.swift in Sources */,
+				5A3C49062119C9F900B9BC6F /* CallBackViewController.swift in Sources */,
 				5A3C49042119C9F900B9BC6F /* AppDelegate.swift in Sources */,
+				5A3C49162119E66400B9BC6F /* RxViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,7 +355,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9PHSZKL64F;
 				INFOPLIST_FILE = SimpleTapApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.k0uhashi.SimpleTapApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -365,7 +374,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9PHSZKL64F;
 				INFOPLIST_FILE = SimpleTapApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.k0uhashi.SimpleTapApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
