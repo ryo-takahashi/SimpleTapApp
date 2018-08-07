@@ -19,13 +19,19 @@ class CallBackViewController: UIViewController {
         })
     }
     
+    @IBAction func reset(_ sender: Any) {
+        viewModel.resetCount(callback: { [weak self] count in
+            self?.updateLabel(count: count)
+        })
+    }
+    
     private func updateLabel(count: Int) {
-        countLabel.text = "標準パターン: \(count)"
+        countLabel.text = "コールバックパターン: \(count)"
     }
 }
 
 class CallBackViewModel {
-    var count = 0
+    private var count = 0
 
     func incrementCount(callback: (Int) -> ()) {
         count += 1
@@ -34,6 +40,11 @@ class CallBackViewModel {
 
     func decrementCount(callback: (Int) -> ()) {
         count -= 1
+        callback(count)
+    }
+    
+    func resetCount(callback: (Int) -> ()) {
+        count = 0
         callback(count)
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YYm-xh-a6s">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -88,12 +88,23 @@
                                     <action selector="countDown:" destination="YYm-xh-a6s" eventType="touchUpInside" id="65B-U1-cus"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Mn-Ns-Z0d">
+                                <rect key="frame" x="0.0" y="435" width="375" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="リセット"/>
+                                <connections>
+                                    <action selector="reset:" destination="YYm-xh-a6s" eventType="touchUpInside" id="WAd-xZ-AvW"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Hg0-Fe-emf" firstAttribute="top" secondItem="RZk-gu-W1N" secondAttribute="bottom" constant="40" id="2hE-ek-mjU"/>
+                            <constraint firstItem="0Mn-Ns-Z0d" firstAttribute="leading" secondItem="cZV-ya-wn0" secondAttribute="leading" id="Cv3-ZU-6DK"/>
+                            <constraint firstAttribute="trailing" secondItem="0Mn-Ns-Z0d" secondAttribute="trailing" id="Drg-74-tvD"/>
                             <constraint firstItem="5vC-g2-YWX" firstAttribute="top" secondItem="Hg0-Fe-emf" secondAttribute="bottom" constant="20" id="Hsv-8m-wIb"/>
                             <constraint firstItem="cZV-ya-wn0" firstAttribute="trailing" secondItem="5vC-g2-YWX" secondAttribute="trailing" id="N8D-A7-Si6"/>
+                            <constraint firstItem="0Mn-Ns-Z0d" firstAttribute="top" secondItem="5vC-g2-YWX" secondAttribute="bottom" constant="20" id="OFm-0b-mLn"/>
                             <constraint firstItem="Hg0-Fe-emf" firstAttribute="centerY" secondItem="UPP-by-DDb" secondAttribute="centerY" id="ONm-ds-uGl"/>
                             <constraint firstItem="cZV-ya-wn0" firstAttribute="trailing" secondItem="RZk-gu-W1N" secondAttribute="trailing" id="UNc-Wp-MIP"/>
                             <constraint firstItem="5vC-g2-YWX" firstAttribute="leading" secondItem="cZV-ya-wn0" secondAttribute="leading" id="hr0-Uh-bQJ"/>
@@ -109,7 +120,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TXK-1m-7zp" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="409" y="20"/>
+            <point key="canvasLocation" x="-326" y="18"/>
         </scene>
         <!--Delegate View Controller-->
         <scene sceneID="dCX-Il-msI">
@@ -162,7 +173,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xgi-tk-Vss" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-292" y="18"/>
+            <point key="canvasLocation" x="398" y="18"/>
         </scene>
     </scenes>
 </document>
