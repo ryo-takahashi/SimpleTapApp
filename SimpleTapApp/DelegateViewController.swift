@@ -14,6 +14,10 @@ class DelegateViewController: UIViewController {
     @IBAction func countUp(_ sender: Any) {
         viewModel.incrementCount()
     }
+    
+    @IBAction func countDown(_ sender: Any) {
+        viewModel.decrementCount()
+    }
 
 }
 
@@ -28,11 +32,19 @@ protocol SimpleTapDelegate {
 }
 
 class DelegateViewModel {
-    private var count = 0
+    private var count = 0 {
+        didSet {
+            delegate?.updateCount(count: count)
+        }
+    }
+
     var delegate: SimpleTapDelegate?
 
     func incrementCount() {
         count += 1
-        delegate?.updateCount(count: count)
+    }
+    
+    func decrementCount() {
+        count -= 1
     }
 }
