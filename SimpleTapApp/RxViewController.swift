@@ -5,7 +5,8 @@ import RxCocoa
 class RxViewController: UIViewController {
     
     @IBOutlet weak var countLabel: UILabel!
-    @IBOutlet weak var countButton: UIButton!
+    @IBOutlet weak var countUpButton: UIButton!
+    @IBOutlet weak var countDownButton: UIButton!
     
     private let disposeBag = DisposeBag()
     
@@ -18,9 +19,15 @@ class RxViewController: UIViewController {
     }
     
     private func setupViewController() {
-        countButton.rx.tap
+        countUpButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.viewModel.incrementCount()
+            })
+            .disposed(by: disposeBag)
+
+        countDownButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.decrementCount()
             })
             .disposed(by: disposeBag)
     }
@@ -40,6 +47,11 @@ class RxViewModel {
     func incrementCount() {
         let count = countRelay.value
         countRelay.accept(count + 1)
+    }
+    
+    func decrementCount() {
+        let count = countRelay.value
+        countRelay.accept(count - 1)
     }
 
 }
