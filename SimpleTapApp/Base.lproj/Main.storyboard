@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NZZ-bk-N8S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -34,12 +34,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="カウントダウン"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kiC-iZ-v3A">
+                                <rect key="frame" x="0.0" y="435" width="375" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="リセット"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="USB-ij-gUu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="3nN-Tg-9jl"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="kiC-iZ-v3A" secondAttribute="trailing" id="BrA-34-kx1"/>
                             <constraint firstItem="USB-ij-gUu" firstAttribute="top" secondItem="Irv-xy-thr" secondAttribute="bottom" constant="20" id="K43-66-pah"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="USB-ij-gUu" secondAttribute="trailing" id="Lc4-Ae-iH4"/>
+                            <constraint firstItem="kiC-iZ-v3A" firstAttribute="top" secondItem="USB-ij-gUu" secondAttribute="bottom" constant="20" id="RJE-d2-btJ"/>
+                            <constraint firstItem="kiC-iZ-v3A" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="TuG-Mz-GKc"/>
                             <constraint firstItem="Irv-xy-thr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aDf-in-96D"/>
                             <constraint firstItem="edu-5e-7tc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="chV-xi-7KS"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="edu-5e-7tc" secondAttribute="trailing" id="l8Y-up-sBB"/>
@@ -51,6 +59,7 @@
                     <connections>
                         <outlet property="countDownButton" destination="USB-ij-gUu" id="law-jK-Ppt"/>
                         <outlet property="countLabel" destination="edu-5e-7tc" id="2Mt-LI-5yP"/>
+                        <outlet property="countResetButton" destination="kiC-iZ-v3A" id="0bI-QO-gnN"/>
                         <outlet property="countUpButton" destination="Irv-xy-thr" id="ekj-er-byO"/>
                     </connections>
                 </viewController>
