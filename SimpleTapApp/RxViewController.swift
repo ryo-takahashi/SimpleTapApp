@@ -7,6 +7,7 @@ class RxViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var countUpButton: UIButton!
     @IBOutlet weak var countDownButton: UIButton!
+    @IBOutlet weak var countResetButton: UIButton!
     
     private let disposeBag = DisposeBag()
     
@@ -28,6 +29,12 @@ class RxViewController: UIViewController {
         countDownButton.rx.tap
             .subscribe(onNext: { [weak self] in
                 self?.viewModel.decrementCount()
+            })
+            .disposed(by: disposeBag)
+        
+        countResetButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.resetCount()
             })
             .disposed(by: disposeBag)
     }
@@ -52,6 +59,10 @@ class RxViewModel {
     func decrementCount() {
         let count = countRelay.value
         countRelay.accept(count - 1)
+    }
+    
+    func resetCount() {
+        countRelay.accept(0)
     }
 
 }
