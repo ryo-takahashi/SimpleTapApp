@@ -18,6 +18,10 @@ class DelegateViewController: UIViewController {
     @IBAction func countDown(_ sender: Any) {
         viewModel.decrementCount()
     }
+    
+    @IBAction func resetCount(_ sender: Any) {
+        viewModel.resetCount()
+    }
 
 }
 
@@ -46,5 +50,9 @@ class DelegateViewModel {
     
     func decrementCount() {
         count -= 1
+    }
+    
+    func resetCount() {
+        count = 0
     }
 }
