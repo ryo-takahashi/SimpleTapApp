@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YYm-xh-a6s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NZZ-bk-N8S">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -90,6 +90,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TXK-1m-7zp" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="409" y="20"/>
+        </scene>
+        <!--Delegate View Controller-->
+        <scene sceneID="dCX-Il-msI">
+            <objects>
+                <viewController id="NZZ-bk-N8S" customClass="DelegateViewController" customModule="SimpleTapApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="c5W-kc-4rU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ボタンを押して！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DYV-0j-vcT">
+                                <rect key="frame" x="0.0" y="243" width="375" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sTq-Nj-1eG">
+                                <rect key="frame" x="138" y="313" width="98" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="タップ！"/>
+                                <connections>
+                                    <action selector="countUp:" destination="NZZ-bk-N8S" eventType="touchUpInside" id="49e-cq-nYR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="sTq-Nj-1eG" firstAttribute="centerY" secondItem="c5W-kc-4rU" secondAttribute="centerY" id="Hyz-2y-BWT"/>
+                            <constraint firstItem="sTq-Nj-1eG" firstAttribute="centerX" secondItem="c5W-kc-4rU" secondAttribute="centerX" id="Ra5-K6-FJL"/>
+                            <constraint firstItem="sTq-Nj-1eG" firstAttribute="top" secondItem="DYV-0j-vcT" secondAttribute="bottom" constant="40" id="Wrx-2F-tRq"/>
+                            <constraint firstItem="kaM-fr-szS" firstAttribute="trailing" secondItem="DYV-0j-vcT" secondAttribute="trailing" id="kiz-CT-ZoN"/>
+                            <constraint firstItem="DYV-0j-vcT" firstAttribute="leading" secondItem="kaM-fr-szS" secondAttribute="leading" id="zrF-FJ-mtx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kaM-fr-szS"/>
+                    </view>
+                    <connections>
+                        <outlet property="countButton" destination="sTq-Nj-1eG" id="OqD-S0-v5Q"/>
+                        <outlet property="countLabel" destination="DYV-0j-vcT" id="w0w-Ag-xbX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xgi-tk-Vss" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292" y="18"/>
         </scene>
     </scenes>
 </document>
