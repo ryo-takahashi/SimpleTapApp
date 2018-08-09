@@ -14,11 +14,11 @@ class DelegateViewController: UIViewController {
     @IBAction func countUp(_ sender: Any) {
         viewModel.incrementCount()
     }
-    
+
     @IBAction func countDown(_ sender: Any) {
         viewModel.decrementCount()
     }
-    
+
     @IBAction func resetCount(_ sender: Any) {
         viewModel.resetCount()
     }
@@ -47,11 +47,11 @@ class DelegateViewModel {
     func incrementCount() {
         count += 1
     }
-    
+
     func decrementCount() {
         count -= 1
     }
-    
+
     func resetCount() {
         count = 0
     }

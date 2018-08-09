@@ -4,7 +4,7 @@ class CallBackViewController: UIViewController {
 
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var countButton: UIButton!
-    
+
     let viewModel = CallBackViewModel()
 
     @IBAction func countUp(_ sender: Any) {
@@ -12,19 +12,19 @@ class CallBackViewController: UIViewController {
             self?.updateLabel(count: count)
         })
     }
-    
+
     @IBAction func countDown(_ sender: Any) {
         viewModel.decrementCount(callback: { [weak self] count in
             self?.updateLabel(count: count)
         })
     }
-    
+
     @IBAction func reset(_ sender: Any) {
         viewModel.resetCount(callback: { [weak self] count in
             self?.updateLabel(count: count)
         })
     }
-    
+
     private func updateLabel(count: Int) {
         countLabel.text = "コールバックパターン: \(count)"
     }
@@ -33,17 +33,17 @@ class CallBackViewController: UIViewController {
 class CallBackViewModel {
     private var count = 0
 
-    func incrementCount(callback: (Int) -> ()) {
+    func incrementCount(callback: (Int) -> Void) {
         count += 1
         callback(count)
     }
 
-    func decrementCount(callback: (Int) -> ()) {
+    func decrementCount(callback: (Int) -> Void) {
         count -= 1
         callback(count)
     }
-    
-    func resetCount(callback: (Int) -> ()) {
+
+    func resetCount(callback: (Int) -> Void) {
         count = 0
         callback(count)
     }
