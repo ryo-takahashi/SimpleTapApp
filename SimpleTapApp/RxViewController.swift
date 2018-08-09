@@ -21,19 +21,22 @@ class RxViewController: UIViewController {
 
     private func setupViewController() {
         countUpButton.rx.tap
-            .subscribe(onNext: { [weak self] in
+            .asDriver()
+            .drive(onNext: { [weak self] in
                 self?.viewModel.incrementCount()
             })
             .disposed(by: disposeBag)
 
         countDownButton.rx.tap
-            .subscribe(onNext: { [weak self] in
+            .asDriver()
+            .drive(onNext: { [weak self] in
                 self?.viewModel.decrementCount()
             })
             .disposed(by: disposeBag)
 
         countResetButton.rx.tap
-            .subscribe(onNext: { [weak self] in
+            .asDriver()
+            .drive(onNext: { [weak self] in
                 self?.viewModel.resetCount()
             })
             .disposed(by: disposeBag)
@@ -41,28 +44,34 @@ class RxViewController: UIViewController {
 
     private func setupViewModel() {
         viewModel.countRelay
+            .asDriver()
             .map { return "Rxパターン: \($0)"}
-            .bind(to: countLabel.rx.text)
+            .drive(countLabel.rx.text)
             .disposed(by: disposeBag)
     }
 
 }
 
 class RxViewModel {
+    let initialCount = 0
     let countRelay = BehaviorRelay<Int>(value: 0)
 
+    init() {
+        resetCount()
+    }
+
     func incrementCount() {
-        let count = countRelay.value
-        countRelay.accept(count + 1)
+        let count = countRelay.value + 1
+        countRelay.accept(count)
     }
 
     func decrementCount() {
-        let count = countRelay.value
-        countRelay.accept(count - 1)
+        let count = countRelay.value - 1
+        countRelay.accept(count)
     }
 
     func resetCount() {
-        countRelay.accept(0)
+        countRelay.accept(initialCount)
     }
 
 }
