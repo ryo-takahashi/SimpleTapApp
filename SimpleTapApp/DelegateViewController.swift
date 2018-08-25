@@ -1,58 +1,66 @@
 import UIKit
 
-class DelegateViewController: UIViewController {
+class DelegateExmapleViewController: UIViewController {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var countButton: UIButton!
 
-    let viewModel = DelegateViewModel()
+    private let presenter = DelegateExamplePresenter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewModel.delegate = self
+        presenter.attachView(self)
     }
 
     @IBAction func countUp(_ sender: Any) {
-        viewModel.incrementCount()
+        presenter.incrementCount()
     }
 
     @IBAction func countDown(_ sender: Any) {
-        viewModel.decrementCount()
+        presenter.decrementCount()
     }
 
     @IBAction func resetCount(_ sender: Any) {
-        viewModel.resetCount()
+        presenter.resetCount()
     }
 
 }
 
-extension DelegateViewController: SimpleTapDelegate {
+extension DelegateExmapleViewController: DelegateExampleView {
     func updateCount(count: Int) {
         countLabel.text = "Delegateパターン: \(count)"
     }
 }
 
-protocol SimpleTapDelegate {
+protocol DelegateExampleView {
     func updateCount(count: Int)
 }
 
-class DelegateViewModel {
-    private var count = 0 {
-        didSet {
-            delegate?.updateCount(count: count)
-        }
+
+class DelegateExamplePresenter {
+    private var count = 0
+
+    private var delegateExampleView: DelegateExampleView?
+
+    func attachView(_ view: DelegateExampleView) {
+        self.delegateExampleView = view
     }
-
-    var delegate: SimpleTapDelegate?
-
+    
+    func detachView() {
+        self.delegateExampleView = nil
+    }
+    
     func incrementCount() {
         count += 1
+        delegateExampleView?.updateCount(count: count)
     }
 
     func decrementCount() {
         count -= 1
+        delegateExampleView?.updateCount(count: count)
     }
 
     func resetCount() {
         count = 0
+        delegateExampleView?.updateCount(count: count)
     }
 }

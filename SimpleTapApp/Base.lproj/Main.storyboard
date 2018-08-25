@@ -172,10 +172,10 @@
             </objects>
             <point key="canvasLocation" x="-326" y="18"/>
         </scene>
-        <!--Delegate View Controller-->
+        <!--Delegate Exmaple View Controller-->
         <scene sceneID="dCX-Il-msI">
             <objects>
-                <viewController id="NZZ-bk-N8S" customClass="DelegateViewController" customModule="SimpleTapApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NZZ-bk-N8S" customClass="DelegateExmapleViewController" customModule="SimpleTapApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="c5W-kc-4rU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
