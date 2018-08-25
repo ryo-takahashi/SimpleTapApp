@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NZZ-bk-N8S">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -66,6 +66,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1135" y="19"/>
+        </scene>
+        <!--Simple Tap View Controller-->
+        <scene sceneID="I1g-Wy-gtB">
+            <objects>
+                <viewController id="ePa-Lt-gqF" customClass="SimpleTapViewController" customModule="SimpleTapApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VO3-s0-u3O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dA-ZZ-q4p">
+                                <rect key="frame" x="140" y="313.5" width="94" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="タップ！"/>
+                                <connections>
+                                    <action selector="buttonTap:" destination="ePa-Lt-gqF" eventType="touchUpInside" id="sdc-gn-Kz6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Before..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTn-K9-Hsq">
+                                <rect key="frame" x="140.5" y="207.5" width="94" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="TTn-K9-Hsq" firstAttribute="centerY" secondItem="VO3-s0-u3O" secondAttribute="centerY" constant="-110" id="AKh-9r-GCJ"/>
+                            <constraint firstItem="3dA-ZZ-q4p" firstAttribute="centerY" secondItem="VO3-s0-u3O" secondAttribute="centerY" id="KAW-bD-KFO"/>
+                            <constraint firstItem="3dA-ZZ-q4p" firstAttribute="centerX" secondItem="VO3-s0-u3O" secondAttribute="centerX" id="W19-Ya-Mup"/>
+                            <constraint firstItem="TTn-K9-Hsq" firstAttribute="centerX" secondItem="VO3-s0-u3O" secondAttribute="centerX" id="ozb-LJ-Q4f"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dm8-V8-TAl"/>
+                    </view>
+                    <connections>
+                        <outlet property="messageLabel" destination="TTn-K9-Hsq" id="FnL-Ac-wpb"/>
+                        <outlet property="tapButton" destination="3dA-ZZ-q4p" id="67m-Bu-NXR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hmb-5c-Ebx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1952.8" y="17.541229385307346"/>
         </scene>
         <!--Call Back View Controller-->
         <scene sceneID="slx-Ae-JS0">
